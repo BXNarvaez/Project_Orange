@@ -1,14 +1,34 @@
-.container {
+.grid-container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr ;
+    grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
 }
 
-.container > div {
-    height: 100px;
-    background: red;
-  }
+.grid-item > iframe{
+    max-width: 150px;
+    border: 1px solid black;
+}
+
+.grid-container > .grid-item {
+  max-width: 150px;
+}
   
-  body {
-    margin: 1rem;
+body {
+  margin: 1rem;
+}
+
+@media only screen and (orientation: landscape),
+only screen and (min-width: 768px) {
+
+ .grid-container {
+    grid-template-columns: repeat(3, 1fr);
   }
+}
+
+@media only screen and (orientation: landscape),
+only screen and (min-width: 1080px) {
+
+ .grid-container {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}

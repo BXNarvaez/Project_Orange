@@ -8,6 +8,10 @@
             <title>Archive | Project Orange</title>
 
             <link rel="stylesheet" href="grid.css" aria-label="grid stylesheet">
+
+            <script type="module" src="./item.js"></script>
+            <script type="module" src="./itemList.js"></script>
+            <script type="module" src="./populateArchive.js"></script>
     
     </head>
     <header>
@@ -16,16 +20,15 @@
         <h2><a href="archive.html">Archive</a></h2>
     </header>
     <body>
-        <div class="container">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+        <div class="grid-container">
         </div>
     </body>
 </html>
 
 <!-- 
+
+    Search toolbar
+    ==========================================
     Grid system
         Columns
             -name
@@ -36,7 +39,7 @@
             -value(s)
             -tool(s)
 
-        
+    ================================================================    
     
     Frontend way to add stuff to the archives
         "Add new content" page for lindsee
@@ -49,4 +52,6 @@
         5. upload the media (image, pdf, audio, video)
             -> Which requires probably an enum? for determining the media types, or a dictionary for different media types. The good thing is that I think we don't have to keep it to just one variable type in JS.
         
+    ================================================================
+    Much much later we'll add sorting and filtering.
     -->
