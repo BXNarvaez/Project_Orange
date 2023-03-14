@@ -4,18 +4,22 @@
     gap: 1rem;
 }
 
+.grid-container > .grid-item {
+    width: 100%;
+}
+
 .grid-item > iframe{
-    max-width: 150px;
+    display: block;
+    width: 80%;
+    aspect-ratio: 1;
     border: 1px solid black;
 }
 
-.grid-container > .grid-item {
-  max-width: 150px;
+.grid-item > * {
+    width: 80%;
+    margin: 0px auto;
 }
-  
-body {
-  margin: 1rem;
-}
+
 
 @media only screen and (orientation: landscape),
 only screen and (min-width: 768px) {
@@ -25,8 +29,7 @@ only screen and (min-width: 768px) {
   }
 }
 
-@media only screen and (orientation: landscape),
-only screen and (min-width: 1080px) {
+@media only screen and (min-width: 1080px) {
 
  .grid-container {
     grid-template-columns: repeat(5, 1fr);
