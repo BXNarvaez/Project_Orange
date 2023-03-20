@@ -1,0 +1,17 @@
+.tag {
+    text-transform: uppercase;
+    font-size: 7pt;
+}
+
+@media only screen and (orientation: landscape),
+only screen and (min-width: 768px) {
+    .tag {
+        font-size: 8pt;
+    }
+}
+
+@media only screen and (min-width: 1080px) {
+    .tag {
+        font-size: 9pt;
+    }
+}

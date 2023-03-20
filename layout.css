@@ -1,0 +1,25 @@
+/* Tags -------------------------------------------- */
+.tag.area {
+    cursor: pointer;
+}
+
+.tag.value {
+    cursor: pointer;
+}
+
+.tag.tool {
+    cursor: pointer;
+}
+
+.tag {
+    border-radius: 16px;
+    margin: 1px;
+    padding: 2px 8px;
+    width: max-content;
+}
+
+.tagList {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px auto;
+}

@@ -13,6 +13,7 @@ class Item {
         this.areas = areas;
         this.values = values;
         this.tools = tools;
+        this.tags = [areas, values, tools];
     }
 
     ChangeName(newName) {
@@ -21,3 +22,6 @@ class Item {
 }
 
 export default Item;
+
+// Work on the tags, (areas, values, and tools)
+// say a user clicks on an AVT, and then it opens a filter for projects with that AVT.
