@@ -1,3 +1,27 @@
+h1 {
+    font-family: "Black Ops One Regular";
+    
+}
+
+h2 {
+    font-family: "Roboto Mono Regular";
+    font-size: 24pt;
+}
+
+h3 {
+    font-family: "Roboto Mono Regular";
+    text-decoration: underline;
+    font-size: 16pt;
+}
+
+body {
+    font-family: "Roboto Mono Regular";
+    font-size: 12pt;
+}
+
+a {
+    text-decoration: none;
+}
 .tag {
     text-transform: uppercase;
     font-size: 7pt;
@@ -14,4 +38,25 @@ only screen and (min-width: 768px) {
     .tag {
         font-size: 9pt;
     }
+}
+
+/* Black Ops One Font Family 
+-------------------------------------------- */
+
+@font-face {
+    font-family: "Black Ops One Regular";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Black Ops One Regular"),
+    url("/fonts/BlackOpsOne/BlackOpsOne-Regular.ttf") format("truetype");
+}
+
+/* Roboto Mono Font Family 
+-------------------------------------------- */
+
+@font-face {
+    font-family: "Roboto Mono Regular";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Roboto Mono Regular"), url("/fonts/RobotoMono/RobotoMono-Regular.ttf") format("truetype");
 }

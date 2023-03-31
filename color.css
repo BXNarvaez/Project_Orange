@@ -1,3 +1,25 @@
+/* Variables
+------------------------------------------------------------ */
+
+:root {
+    --oliveGreen: #7D924F;
+    --oliveGreenHighlight: #A39264;
+    --orange: #EF8A17;
+    --darkGray: #3D3E3E;
+}
+
+html {
+    background-color: var(--darkGray);
+}
+
+h1, h2, h3, body {
+    color: var(--oliveGreen);
+}
+
+a:hover, a > *:hover {
+    color: var(--oliveGreenHighlight);
+}
+
 .tag.area {
     border-color: red;
     background-color: red;
