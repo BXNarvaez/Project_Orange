@@ -37,3 +37,17 @@ a:hover, a > *:hover {
     background-color: green;
     color: white;
 }
+
+.dragWind {
+	background-color: black;
+    border: 1px solid black;
+}
+
+.dragWindHeader {
+	background-color: var(--orange);
+    color: black;
+}
+
+.dragWindContent {
+	
+}

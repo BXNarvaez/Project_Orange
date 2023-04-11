@@ -1,23 +1,90 @@
-function NewDraggableWindow (item) {
-    var windowDiv = document.createElement('div');
-    windowDiv.classList.add('dragWind');
+class DraggableWindow {
+    constructor(div, item) {
+        this.div = div;
+        if(div.parentNode) this.parent = div.parentNode.element;
+        this.item = item;
+        this.width;
+        this.height;
+        this.posX;
+        this.posY;
+        this.centerX;
+        this.centerY;
+    }
 
-    var headerDiv = windowDiv.appendChild(document.createElement('h3'));
-    headerDiv.classList.add('dragWindHeader title');
+    SetSize(width = 300, height = 225) {
+        this.div.style.width = width + "px";
+        this.div.style.height = height + "px";
+        this.width = width;
+        this.height = height;
+        this.UpdateCenterPoint();
+    }
 
-    headerDiv.setHTML(item.name);
+    SetPosition(x, y) {
+        this.div.style.left = x + "px";
+        this.div.style.top = y + "px";
+        this.posX = x;
+        this.posY = y;
+    }
 
-    var contentDiv = windowDiv.appendChild(document.createElement('div'));
-    contentDiv.classList.add('dragWindContent');
+    UpdateCenterPoint() {
+        this.centerX = this.width / 2;
+        this.centerY = this.height / 2;
+    }
+}
 
-    var wrapperDiv = contentDiv.appendChild(document.createElement('div'));
-    wrapperDiv.classList.add('contentBox');
+export function InstantiateWindow (item) {
+    let draggableWindow = new DraggableWindow(document.createElement('div'), item);
+    draggableWindow.div.setAttribute("class", 'dragWind');
 
-    wrapperDiv.setHTML(
+    let headerDiv = draggableWindow.div.appendChild(document.createElement('h3'));
+    headerDiv.setAttribute("class", 'dragWindHeader title');
+
+    headerDiv.setHTML(draggableWindow.item.name);
+
+    let contentDiv = draggableWindow.div.appendChild(document.createElement('div'));
+    contentDiv.setAttribute("class", 'dragWindContent');
+
+    let wrapperDiv = contentDiv.appendChild(document.createElement('div'));
+    wrapperDiv.setAttribute("class", 'contentBox');
+
+    wrapperDiv.insertAdjacentHTML('afterbegin',
         `
-        <img src="${item.}" scrolling="no">
+        <img src="${draggableWindow.item.media}" scrolling="no">
         `
     );
 
+    let tagList = document.createElement('div');
+    tagList.setAttribute("class", "tagList");
+    let tags = draggableWindow.item.tags
+
+    for (let i = 0; i < draggableWindow.item.tags.length; i++) {
+        tags[i].forEach(element => {
+            let tag = document.createElement("div")
+            let type;
+
+            if(i == 0) {type = "tag area"}
+            else if (i == 1) {type = "tag value"}
+            else if (i == 2) {type = "tag tool"}
+
+            tag.setAttribute("class", type);
+            tag.setHTML(element);
+            tagList.appendChild(tag);
+        });
+    }
+
+    wrapperDiv.append(tagList);
+    wrapperDiv.insertAdjacentHTML('beforeend', `
+    <div>${draggableWindow.item.client}</div>
+    <div>${draggableWindow.item.dateCreated}</div>
+    <div>${draggableWindow.item.description}</div>
+    `)
+
+    return draggableWindow;
+}
+
+export function SetTransform(draggableWindow, width = 300, height = 225, x, y) {
+    draggableWindow.div.style.width = width + "px";
+    draggableWindow.div.style.height = height + "px";
+    draggableWindow.UpdateSize(width, height);
 
 }

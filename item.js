@@ -1,11 +1,13 @@
 class Item {
     constructor (
-        name, 
+        name = "name", 
         client, 
         dateCreated, 
         areas, 
         values, 
-        tools
+        tools,
+        media = null,
+        description = "Lol Lorem Ipsum ammirite?"
     ) {
         this.name = name;
         this.client = client;
@@ -14,10 +16,20 @@ class Item {
         this.values = values;
         this.tools = tools;
         this.tags = [areas, values, tools];
+        this.media = media;
+        this.description = description;
     }
 
     ChangeName(newName) {
         this.name = newName;
+    }
+
+    AddTag(tag, kind) {
+        
+    }
+
+    UpdateDescription(newDescription) {
+
     }
 }
 

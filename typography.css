@@ -1,17 +1,27 @@
 h1 {
-    font-family: "Black Ops One Regular";
-    
+    font-size: 32px;
 }
 
 h2 {
-    font-family: "Roboto Mono Regular";
     font-size: 24pt;
 }
 
 h3 {
     font-family: "Roboto Mono Regular";
-    text-decoration: underline;
     font-size: 16pt;
+}
+
+.title {
+	font-family: "Black Ops One Regular";
+}
+
+.heading {
+	font-family: "Roboto Mono Regular";
+}
+
+.subheading {
+	font-family: "Roboto Mono Regular";
+    text-decoration: underline;
 }
 
 body {

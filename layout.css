@@ -31,3 +31,49 @@
     flex-wrap: wrap;
     margin: 0px auto;
 }
+
+/* Draggable Window */
+:root {
+	--headerSize: 31px;
+}
+
+.dragWind {
+  position: absolute;
+  z-index: 9;
+  min-width: 300px;
+  min-height: 225px;
+  max-width: 600px;
+  max-height: 450px;
+  overflow: hidden;
+  resize: both;
+}
+
+.dragWindHeader {
+  width: 100%;
+  height: var(--headerSize);
+  padding: 5px;
+  cursor: move;
+  z-index: 10;
+}
+
+.dragWindContent {
+  width: 100%;
+  height: calc(100% - var(--headerSize));
+  overflow-y: scroll;
+}
+
+.dragWindContent > .contentBox {
+  padding: 5px;
+  overflow: hidden;
+}
+
+.contentBox > iframe {
+    width: 100%;
+    aspect-ratio: 4/3;
+}
+
+.contentBox > img {
+	width: 100%;
+    height: auto;
+    
+}
